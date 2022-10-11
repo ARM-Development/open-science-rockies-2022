@@ -1,6 +1,5 @@
-# (Replace_with_your_title) Cookbook
+# Open Science in the Rockies - AMS Short Course 2022
 
-[![nightly-build](https://github.com/ARM-Development/open-science-rockies-2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ARM-Development/arm-cookbook-template/actions/workflows/nightly-build.yaml)
 [![Binder](http://binder.mypythia.org/badge_logo.svg)](http://binder.mypythia.org/v2/gh/ARM-Development/arm-cookbook-template/main?labpath=notebooks)
 
 This ARM Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., *working with radar data in Python*)
