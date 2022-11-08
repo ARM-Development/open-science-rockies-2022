@@ -1,6 +1,12 @@
 format: jb-book
 root: README
 parts:
-- caption: Notebooks
-  chapters:
-    - glob: Notebooks/*
+  - caption: Radar with Py-ART
+    chapters:
+      - glob: notebooks/pyart/*
+  - caption: Observations with ACT
+    chapters:
+      - glob: notebooks/act/*
+  - caption: Pangeo and Intake-ESM
+    chapters:
+      - glob: notebooks/pangeo/*
