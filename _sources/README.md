@@ -19,8 +19,7 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
 
 ## Authors
 
-[Dr. Daniel Feldman](@drfeldman), [Max Grover](@mgrover1), [Dr. Scott Collis](@scollis), [Monica Ihli](@monicaihli
-)
+[Dr. Daniel Feldman](@drfeldman), [Max Grover](@mgrover1), [Dr. Scott Collis](@scollis), [Monica Ihli](@monicaihli)
 
 ### Contributors
 
