@@ -1,6 +1,6 @@
 # Open Science in the Rockies - AMS Short Course 2023
 
-[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/open-science-rockies&urlpath=lab/tree/open-science-rockies/notebooks&branch=main)
+[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=ARM+JupyterHub&message=ACE+Environment&color=blue)](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/open-science-rockies-2022&urlpath=lab/tree/open-science-rockies-2022/notebooks&branch=main)
 
 This repository hosts content related to the AMS 2023 Short Course: Open Science in the Rockies: Working With ARM Data from the Surface Atmosphere Integrated Field Laboratory
 
