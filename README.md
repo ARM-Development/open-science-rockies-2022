@@ -27,19 +27,21 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
   <img src="https://contrib.rocks/image?repo=ARM-Development/open-science-rockies" />
 </a>
 
-## Course program
-* 08:00 - 08:15 Welcome and getting started
-* 08:15 - 08:45 An Overview of ARM
-* 08:45 - 09:15 SAIL Field Campaign Overview
-* 09:15 - 09:45 Accessing ARM Data + Compute
+## Course program (All times in Mountain Time)
+* 08:00 - 08:15 Welcome and getting started (Max Grover)
+* 08:15 - 08:30 An Overview of ARM (Dr. Scott Collis)
+* 08:30 - 09:00 SAIL Field Campaign Overview (Dr. Dan Feldman)
+* 09:00 - 09:15 Ice Breaker! (Dr. Dan Feldman)
+* 09:15 - 09:45 Accessing ARM Data + Compute (Monica Ilhi)
 * 09:45 - 10:00 Break!
-* 10:00 - 10:50 Radar Data with Py-ART
-* 11:00 - 11:50 Surface Observations with ACT
-* 11:50 - 13:00 Lunch 
-* 13:00 - 13:50 Working with Aerosol Measurements
-* 14:00 - 14:50 Advanced Xarray + Visualization
-* 15:00 - 15:30 How to Contribute to Open Science
-* 15:30 - 15:45 Closing
+* 10:00 - 10:50 Radar Data with Py-ART (Max Grover)
+* 11:00 - 11:50 Surface Observations with ACT (Joe O’Brien)
+* 11:50 - 13:00 Lunch
+* 13:00 - 13:50 Working with Aerosol Measurements (Dr. Allison Aiken)
+* 14:00 - 14:50 Advanced Xarray + Visualization (Max Grover)
+* 15:00 - 15:30 How to Contribute to Open Science (Dr. Scott Collis)
+* 15:30 - 15:45 Closing (Dr. Dan Feldman)
+
 
 ## Structure
 
