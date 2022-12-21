@@ -42,6 +42,21 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
 * 15:00 - 15:30 How to Contribute to Open Science (Dr. Scott Collis)
 * 15:30 - 15:45 Closing (Dr. Dan Feldman)
 
+## Getting Started
+
+### Register for Access to the Tutorial Platform
+
+Participants who do not already have one should first register for an ARM account. When filling out the form, indicate that you are affiliated with the particular workshop or course (AMS Open Science in the Rockies):
+
+![ARM user registration screenshot](notebooks/images/arm-registration-instructions.png)
+
+If you already have an ARM account, email clustersupport@arm.gov that you need to be granted access to the workshop or course materials.
+
+### Investigate Tutorial Materials and Follow Prerequisites
+
+The tutorial materials are available online (https://arm-development.github.io/open-science-rockies-2022), and we encourage participants to investigate the materials before attending the workshop. For example, in one of the first examples (the radar example), we encourage participants to investigate the prerequisites, and ensure they are familiar with the material. While this is not required for participants, it is highly encouraged.
+
+![Example tutorial material](notebooks/images/arm-tutorial-screenshot.png)
 
 ## Structure
 
