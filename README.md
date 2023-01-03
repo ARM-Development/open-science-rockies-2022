@@ -19,7 +19,7 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
 
 ## Authors
 
-[Dr. Daniel Feldman](@drfeldman), [Max Grover](@mgrover1), [Dr. Scott Collis](@scollis), [Monica Ihli](@monicaihli)
+[Dr. Daniel Feldman](@drfeldman), [Max Grover](@mgrover1), [Dr. Scott Collis](@scollis), [Dr. Monica Ihli](@monicaihli)
 
 ### Contributors
 
@@ -32,7 +32,7 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
 * 08:15 - 08:30 An Overview of ARM (Dr. Scott Collis)
 * 08:30 - 09:00 SAIL Field Campaign Overview (Dr. Dan Feldman)
 * 09:00 - 09:15 Ice Breaker! (Dr. Dan Feldman)
-* 09:15 - 09:45 Accessing ARM Data + Compute (Monica Ilhi)
+* 09:15 - 09:45 Accessing ARM Data + Compute (Dr. Monica Ilhi)
 * 09:45 - 10:00 Break!
 * 10:00 - 10:50 Radar Data with Py-ART (Max Grover)
 * 11:00 - 11:50 Surface Observations with ACT (Joe O’Brien)
