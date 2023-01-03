@@ -684,17 +684,17 @@ title="Print to PDF"
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
-import warnings
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 
-import cartopy.crs as ccrs
-import matplotlib.pyplot as plt
-import numpy as np
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-import pyart
+<span class="kn">import</span> <span class="nn">pyart</span>
 
-warnings.filterwarnings(&#39;ignore&#39;)
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -772,7 +772,7 @@ The documentation on what formats can be read by Py-ART can be found here:</p>
 <p>Let’s check out what arguments arguments <code class="docutils literal notranslate"><span class="pre">pyart.io.read()</span></code> takes in!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>pyart.io.read?
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>pyart.io.read<span class="o">?</span>
 </pre></div>
 </div>
 </div>
@@ -837,9 +837,9 @@ radar : Radar
 <p>When we read this in, we get a <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.core.Radar.html#pyart.core.Radar"><code class="docutils literal notranslate"><span class="pre">pyart.Radar</span></code> object</a>!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>file = &#39;../data/sample_sail_ppi.nc&#39;
-radar = pyart.io.read(file)
-radar
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_ppi.nc&#39;</span>
+<span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">radar</span>
 </pre></div>
 </div>
 </div>
@@ -857,7 +857,7 @@ radar
 <p>To see what fields are present we can add the fields and keys additions to the variable where the radar object is stored.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>radar.fields.keys()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ the contents of that field.</p>
 <p>Let’s take a look at <code class="docutils literal notranslate"><span class="pre">'corrected_reflectivity'</span></code>, which is a common field to investigate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(radar.fields[&#39;corrected_reflectivity&#39;])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -906,8 +906,8 @@ the contents of that field.</p>
 <p>We use add <code class="docutils literal notranslate"><span class="pre">'data'</span></code> at the end, which will extract the <strong>data array</strong> (which is a masked numpy array) from the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>reflectivity = radar.fields[&#39;corrected_reflectivity&#39;][&#39;data&#39;]
-print(type(reflectivity), reflectivity)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reflectivity</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">reflectivity</span><span class="p">),</span> <span class="n">reflectivity</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -926,7 +926,7 @@ print(type(reflectivity), reflectivity)
 <p>Lets’ check the size of this array…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>reflectivity.shape
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reflectivity</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -943,7 +943,7 @@ print(type(reflectivity), reflectivity)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(radar.nrays, radar.ngates)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">radar</span><span class="o">.</span><span class="n">nrays</span><span class="p">,</span> <span class="n">radar</span><span class="o">.</span><span class="n">ngates</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -956,7 +956,7 @@ print(type(reflectivity), reflectivity)
 <p>If we wanted to look the 300th ray, at the second gate, we would use something like the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(reflectivity[300, 2])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">reflectivity</span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -991,7 +991,7 @@ print(type(reflectivity), reflectivity)
 <p>We start by creating a figure first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure(figsize=[10, 10])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1004,8 +1004,8 @@ print(type(reflectivity), reflectivity)
 <p>Once we have a figure, let’s add our <code class="docutils literal notranslate"><span class="pre">RadarMapDisplay</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure(figsize=[10, 10])
-display = pyart.graph.RadarMapDisplay(radar)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1018,7 +1018,7 @@ display = pyart.graph.RadarMapDisplay(radar)
 <p>Adding our map display without specifying a field to plot <strong>won’t do anything</strong> we need to specifically add a field to field using <code class="docutils literal notranslate"><span class="pre">.plot_ppi_map()</span></code>, which creates a Plan Position Indicator (PPI) plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>display.plot_ppi_map(&#39;corrected_reflectivity&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1039,17 +1039,17 @@ display = pyart.graph.RadarMapDisplay(radar)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>###### fig = plt.figure(figsize=[12, 8])
-display = pyart.graph.RadarMapDisplay(radar)
-display.plot_ppi_map(&#39;corrected_reflectivity&#39;,
-                     sweep=3,
-                     vmin=-20,
-                     vmax=60,
-                     lat_lines = np.arange(38, 39.5, .25),
-                     lon_lines = np.arange(-107.5, -106.5, .25),
-                     projection=ccrs.PlateCarree(),
-                     cmap=&#39;pyart_HomeyerRainbow&#39;)
-plt.savefig(&quot;sample-ppi-map.png&quot;, dpi=300)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###### fig = plt.figure(figsize=[12, 8])</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span>
+                     <span class="n">sweep</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                     <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span>
+                     <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                     <span class="n">lat_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mf">39.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">lon_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">107.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">106.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;pyart_HomeyerRainbow&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;sample-ppi-map.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1060,7 +1060,7 @@ plt.savefig(&quot;sample-ppi-map.png&quot;, dpi=300)
 <p>You can change many parameters in the graph by changing the arguments to plot_ppi_map. As you can recall from earlier. simply view these arguments in a Jupyter notebook by typing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>display.plot_ppi_map?
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>display.plot_ppi_map<span class="o">?</span>
 </pre></div>
 </div>
 </div>
@@ -1226,17 +1226,17 @@ edgecolor : str
 <p>For example, let’s change the colormap to something different</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure(figsize=[12, 8])
-display = pyart.graph.RadarMapDisplay(radar)
-display.plot_ppi_map(&#39;corrected_reflectivity&#39;,
-                     sweep=3,
-                     vmin=-20,
-                     vmax=60,
-                     projection=ccrs.PlateCarree(),
-                     lat_lines = np.arange(38, 39.5, .25),
-                     lon_lines = np.arange(-107.5, -106.5, .25),
-                     cmap=&#39;pyart_Carbone42&#39;)
-plt.show()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span>
+                     <span class="n">sweep</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                     <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span>
+                     <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                     <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                     <span class="n">lat_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mf">39.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">lon_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">107.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">106.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;pyart_Carbone42&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1247,17 +1247,17 @@ plt.show()
 <p>Or, let’s view a different elevation scan! To do this, change the sweep parameter in the plot_ppi_map function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure(figsize=[12, 8])
-display = pyart.graph.RadarMapDisplay(radar)
-display.plot_ppi_map(&#39;corrected_reflectivity&#39;,
-                     sweep=6,
-                     vmin=-20,
-                     vmax=60,
-                     lat_lines = np.arange(38, 39.5, .25),
-                     lon_lines = np.arange(-107.5, -106.5, .25),
-                     projection=ccrs.PlateCarree(),
-                     cmap=&#39;pyart_Carbone42&#39;)
-plt.show()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarMapDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi_map</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span>
+                     <span class="n">sweep</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                     <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span>
+                     <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+                     <span class="n">lat_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mf">39.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">lon_lines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">107.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">106.5</span><span class="p">,</span> <span class="mf">.25</span><span class="p">),</span>
+                     <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span>
+                     <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;pyart_Carbone42&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1276,8 +1276,8 @@ plt.show()
 <p>During this same time period during SAIL, the ARM program collected RHI scans, which provide a vertical cross section through the preciptiation! Let’s read in one of those files. The IO line is the same!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rhi_file = &#39;../data/sample_sail_rhi.nc&#39;
-rhi_radar = pyart.io.read(rhi_file)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhi_file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_rhi.nc&#39;</span>
+<span class="n">rhi_radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">rhi_file</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1289,10 +1289,10 @@ rhi_radar = pyart.io.read(rhi_file)
 <p><strong>Note - this is uncorrected data, so be sure take caution working with this</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>radar = pyart.graph.RadarDisplay(rhi_radar)
-radar.plot(&quot;DBZ&quot;, vmin=-20, vmax=60,)
-plt.ylim(0, 5)
-plt.savefig(&quot;sample-rhi.png&quot;, dpi=300)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">rhi_radar</span><span class="p">)</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;DBZ&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;sample-rhi.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1306,13 +1306,13 @@ plt.savefig(&quot;sample-rhi.png&quot;, dpi=300)
 <p>But let’s say we wanted to compare the vertical resolution we get from an RHI, compared to PPI… we can do this with Py-ART!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Load our PPI data back in
-file = &#39;../data/sample_sail_ppi.nc&#39;
-radar = pyart.io.read(file)
-radar
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load our PPI data back in</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/sample_sail_ppi.nc&#39;</span>
+<span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">radar</span>
 
-# Create a cross section at our 334 degree azimuth
-xsect = pyart.util.cross_section_ppi(radar, [328])
+<span class="c1"># Create a cross section at our 334 degree azimuth</span>
+<span class="n">xsect</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">cross_section_ppi</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="p">[</span><span class="mi">328</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1320,11 +1320,11 @@ xsect = pyart.util.cross_section_ppi(radar, [328])
 <p>Now, notice how coarse the resolution of the precipitation region!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>colorbar_label = &#39;Equivalent \n reflectivity factor \n (dBZ)&#39;
-display = pyart.graph.RadarDisplay(xsect)
-display.plot(&#39;corrected_reflectivity&#39;, 0, vmin=-20, vmax=60, colorbar_label=colorbar_label)
-plt.ylim(0, 5)
-plt.tight_layout()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colorbar_label</span> <span class="o">=</span> <span class="s1">&#39;Equivalent </span><span class="se">\n</span><span class="s1"> reflectivity factor </span><span class="se">\n</span><span class="s1"> (dBZ)&#39;</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">xsect</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;corrected_reflectivity&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="n">colorbar_label</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1334,28 +1334,28 @@ plt.tight_layout()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>qvp = pyart.retrieve.quasi_vertical_profile(radar)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qvp</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">retrieve</span><span class="o">.</span><span class="n">quasi_vertical_profile</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>time = np.array(qvp[&quot;time&quot;][&quot;data&quot;], dtype=&#39;datetime64[s]&#39;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">qvp</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[s]&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r = qvp[&quot;range&quot;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">qvp</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>qvp[&quot;time&quot;][&quot;data&quot;].shape
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qvp</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -1367,14 +1367,14 @@ plt.tight_layout()
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ref = qvp[&quot;corrected_reflectivity&quot;]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span> <span class="o">=</span> <span class="n">qvp</span><span class="p">[</span><span class="s2">&quot;corrected_reflectivity&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(ref, r);
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">r</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

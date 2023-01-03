@@ -481,9 +481,9 @@ title="Print to PDF"
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import act
-import matplotlib.pyplot as plt
-import numpy as np
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -495,15 +495,15 @@ import numpy as np
 <h3>Access Aerosol Data<a class="headerlink" href="#access-aerosol-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>username = &#39;armlive_training&#39;
-token = &#39;6413343e8c6a6ade&#39;
-startdate = &#39;20220801&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;armlive_training&#39;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;6413343e8c6a6ade&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;20220801&#39;</span>
 
-datastream = &#39;gucaosacsmtofspecS2.b1&#39;
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;gucaosacsmtofspecS2.b1&#39;</span>
 
-files = act.discovery.download_data(username, token, datastream, startdate, startdate)
+<span class="n">files</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">startdate</span><span class="p">)</span>
 
-aeorosol_ds = act.io.read_netcdf(files)
+<span class="n">aeorosol_ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -518,11 +518,11 @@ aeorosol_ds = act.io.read_netcdf(files)
 <h3>Access Meteorological Data<a class="headerlink" href="#access-meteorological-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>datastream = &#39;gucmetM1.b1&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;gucmetM1.b1&#39;</span>
 
-files = act.discovery.download_data(username, token, datastream, startdate, startdate)
+<span class="n">files</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">startdate</span><span class="p">)</span>
 
-met_ds = act.io.read_netcdf(files)
+<span class="n">met_ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -538,24 +538,24 @@ met_ds = act.io.read_netcdf(files)
 <h2>Plot our Display with a Wind Rose and Timeseries<a class="headerlink" href="#plot-our-display-with-a-wind-rose-and-timeseries" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>WindDisplay = act.plotting.WindRoseDisplay(met_ds, figsize=(8, 14), subplot_shape=(3,))
-WindDisplay.plot(
-    &#39;wdir_vec_mean&#39;, &#39;wspd_vec_mean&#39;, spd_bins=np.linspace(0, 10, 4),
-    num_dirs=30, tick_interval=2, subplot_index=(0,))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">WindDisplay</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">WindRoseDisplay</span><span class="p">(</span><span class="n">met_ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+<span class="n">WindDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">,</span> <span class="n">spd_bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">num_dirs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">tick_interval</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
 
-TimeAosDisplay = act.plotting.TimeSeriesDisplay(aeorosol_ds)
-WindDisplay.put_display_in_subplot(TimeAosDisplay, subplot_index=(1,))
-TimeAosDisplay.plot(&#39;sulfate&#39;, label=&#39;Sulfate&#39;)
-TimeAosDisplay.plot(&#39;ammonium&#39;, label=&#39;Ammonium&#39;)
-TimeAosDisplay.plot(&#39;nitrate&#39;, label=&#39;Nitrate&#39;)
-TimeAosDisplay.plot(&#39;chloride&#39;, label=&#39;Chloride&#39;)
-TimeAosDisplay.day_night_background()
+<span class="n">TimeAosDisplay</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">aeorosol_ds</span><span class="p">)</span>
+<span class="n">WindDisplay</span><span class="o">.</span><span class="n">put_display_in_subplot</span><span class="p">(</span><span class="n">TimeAosDisplay</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">TimeAosDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sulfate&#39;</span><span class="p">)</span>
+<span class="n">TimeAosDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ammonium&#39;</span><span class="p">)</span>
+<span class="n">TimeAosDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nitrate&#39;</span><span class="p">)</span>
+<span class="n">TimeAosDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;chloride&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Chloride&#39;</span><span class="p">)</span>
+<span class="n">TimeAosDisplay</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">()</span>
 
-TimeMetDisplay = act.plotting.TimeSeriesDisplay(met_ds)
-WindDisplay.put_display_in_subplot(TimeMetDisplay, subplot_index=(2,))
-TimeMetDisplay.plot(&#39;wspd_vec_mean&#39;, label=&#39;Windspeed (m/s)&#39;)
-TimeMetDisplay.day_night_background()
-plt.tight_layout()
+<span class="n">TimeMetDisplay</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">met_ds</span><span class="p">)</span>
+<span class="n">WindDisplay</span><span class="o">.</span><span class="n">put_display_in_subplot</span><span class="p">(</span><span class="n">TimeMetDisplay</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">TimeMetDisplay</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Windspeed (m/s)&#39;</span><span class="p">)</span>
+<span class="n">TimeMetDisplay</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
