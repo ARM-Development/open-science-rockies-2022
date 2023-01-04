@@ -14,6 +14,8 @@ dependencies:
   - distributed
   - xarray
   - pandas
+  - hvplot
+  - bokeh
   - fiona
   - pip
   - pip:
