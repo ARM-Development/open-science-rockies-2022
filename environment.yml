@@ -1,4 +1,4 @@
-name: arm-cookbook-dev
+name: open-science-rockies-2022-dev
 channels:
   - conda-forge
   - defaults
