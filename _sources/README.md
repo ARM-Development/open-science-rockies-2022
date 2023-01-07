@@ -93,19 +93,19 @@ If you are interested in running this material locally on your computer, you wil
 
 (Replace "arm-cookbook-example" with the title of your cookbooks)   
 
-1. Clone the `https://github.com/ARM-Development/arm-cookbook-example` repository:
+1. Clone the `https://github.com/ARM-Development/open-science-rockies-2022` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythiaCookbooks/cookbook-example.git
+    git clone https://github.com/ARM-Development/open-science-rockies-2022
     ```  
-1. Move into the `arm-cookbook-example` directory
+1. Move into the `open-science-rockies-2022` directory
     ```bash
-    cd arm-cookbook-example
+    cd open-science-rockies-2022
     ```  
 1. Create and activate your conda environment from the `environment.yml` file
     ```bash
     conda env create -f environment.yml
-    conda activate arm-cookbook-example
+    conda activate open-science-rockies-2022-dev
     ```  
 1.  Move into the `notebooks` directory and start up Jupyterlab
     ```bash
