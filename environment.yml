@@ -16,6 +16,7 @@ dependencies:
   - xarray
   - pandas
   - hvplot
+  - datashader
   - bokeh
   - fiona
   - pip
