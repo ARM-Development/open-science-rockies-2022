@@ -7,6 +7,6 @@ parts:
   - caption: Observations with ACT
     chapters:
       - glob: notebooks/act/*
-  - caption: Pangeo and Intake-ESM
+  - caption: Pangeo + Xarray
     chapters:
       - glob: notebooks/pangeo/*
