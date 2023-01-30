@@ -23,8 +23,8 @@ Open Science in the Rockies: Working With ARM Measurements from the Surface Atmo
 
 ### Contributors
 
-<a href="https://github.com/ARM-Development/open-science-rockies/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ARM-Development/open-science-rockies" />
+<a href="https://github.com/ARM-Development/open-science-rockies-2022/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ARM-Development/open-science-rockies-2022" />
 </a>
 
 ## Course program (All times in Mountain Time)
