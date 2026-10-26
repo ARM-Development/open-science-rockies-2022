@@ -1,0 +1,22 @@
+version: 1
+project:
+  title: Open Science in the Rockies
+  authors:
+    - name: ARM Development Team
+  github: ARM-Development/open-science-rockies-2022
+  toc:
+    - file: README.md
+    - title: Radar with Py-ART
+      children:
+        - pattern: notebooks/pyart/*
+    - title: Observations with ACT
+      children:
+        - pattern: notebooks/act/*
+    - title: Pangeo + Xarray
+      children:
+        - pattern: notebooks/pangeo/*
+site:
+  options:
+    logo: notebooks/images/arm_logo.png
+    folders: true
+  template: book-theme
