@@ -4,11 +4,12 @@ channels:
   - defaults
   - pyviz
 dependencies:
-  - python=3.9
+  - python=3.14
   - arm_pyart
   - act-atmos
   - matplotlib
   - jupyterlab
+  - mystmd
   - cartopy
   - numpy
   - dask
@@ -19,6 +20,4 @@ dependencies:
   - datashader
   - bokeh
   - fiona
-  - pip
-  - pip:
-    - -r doc-requirements.txt
+  - pip>=26.2.2
